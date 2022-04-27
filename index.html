@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tower of Hanoi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Ruluko|Shrikhand" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+
+</head>
+<body>
+    <header>
+        <h1>Tower of Hanoi</h1>
+    </header>
+    <div class="tracker">
+        <p>Välj plattor</br>
+            <select id = "drop" class = "numDisks" onchange="newGame()">
+            <option id ="d3" selected>3</option>
+            <option id ="d4">4</option>
+            <option id ="d5">5</option>
+            <option id ="d6">6</option>
+            <option id ="d7">7</option>
+            <option id ="d8">8</option>
+            </select>
+        </p>
+
+<!-- Räkna högst upp på sidan också en del som talar om det minsta antalet drag -->        <div><p>Rörelser gjorda</p>
+            <div id="counter">0</div>
+        </div>
+        <div><p>Minsta drag att lösa</p>
+            <div id="minimum">0</div>
+        </div>
+    </div>
+    <div  id="modal">
+        <div id="modal-textbox">
+            <h2>Congratulations</h2>
+        </div>
+    </div>
+        <div class="board">
+<!-- Spelbrädet kommer att behöva ha tre torn som skivorna kan flytta runt -->            <div class="tower" id="first">
+
+            </div>
+            <div class="tower" id="second">
+                
+            </div>
+            <div class="tower" id="third">
+
+            </div>
+        </div>
+    <!-- återställa button -->
+    <button class="återställa" onclick="newGame()">Återställa</button>
+
+    <script src="main.js"></script>
+</body>
+</html>
