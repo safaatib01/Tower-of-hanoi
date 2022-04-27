@@ -1,4 +1,5 @@
-// ställa in tornen och skivan vars
+
+
 const tower1 = document.querySelector('#first')
 const tower2 = document.querySelector('#second')
 const tower3 = document.querySelector('#third')
@@ -6,14 +7,13 @@ let diskSelector = 0
 let minMoves = 0
 let counter = 0
 
-//Klicka på händelse för att visa markerad objektvariabel som behövs för att hålla ett sant falskt värdelet active = false
 
-//Skapa med DOM-element
+let active = false
+
 function build(){
     const diskDrop = document.getElementById('drop')
     diskSelector = diskDrop.options[diskDrop.selectedIndex].value
     for (i = 1; i <= diskSelector; i++){
-// för loop för att bygga diskarna
         let diskDiv = document.createElement('div')
         diskDiv.id = 'disk' + i
         diskDiv.className = 'disk'
@@ -23,7 +23,6 @@ function build(){
     }build()
 
 let actions = function(){
-//Stoppa konsolmeddelandet från att visas med tomma torn
     if (active === false && this.childElementCount === 0){
         return
     }else if (active === this.lastChild){
@@ -46,7 +45,6 @@ let actions = function(){
 tower1.addEventListener('click', actions)
 tower2.addEventListener('click', actions)
 tower3.addEventListener('click', actions)
-//vinnare alert
 function winner() {if (tower3.childElementCount == diskSelector){
     const $modal = $('#modal')
     const $endGame = $('#modal-textbox')
